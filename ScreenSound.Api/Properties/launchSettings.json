@@ -7,11 +7,14 @@
       "sslPort": 44369
     }
   },
+
+  
   "profiles": {
     "ScreenSound.Api": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
+     "launchUrl": "Swagger/index.html",
       "applicationUrl": "https://localhost:7270;http://localhost:5259",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"

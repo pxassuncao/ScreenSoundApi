@@ -6,7 +6,7 @@ namespace ScreenSound.Api.Endpoints
 {
     public static class MusicasExtensions
     {
-        public static void AddEndpointMusicas(this WebApplication
+        public static void AddEndPointsMusicas(this WebApplication
             app)
         {
             app.MapGet("/Musicas", ([FromServices]DAL<Musica> dal) =>
@@ -24,9 +24,9 @@ namespace ScreenSound.Api.Endpoints
                 return Results.Ok(musica);
             });
 
-            app.MapPost("/Musicas", ([FromServices] DAL<Musica> DAL, [FromBody] Musicas musicas) =>
+            app.MapPost("/Musicas", ([FromServices] DAL<Musica> DAL, [FromBody] Musica musicas) =>
             {
-                DAL.Adicionar(musica);
+                DAL.Adicionar(musicas);
                 return Results.Ok();
             });
 

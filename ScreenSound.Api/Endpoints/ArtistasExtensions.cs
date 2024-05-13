@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using ScreenSound.Requests;
+using ScreenSound.Api.Requests;
 using ScreenSound.Data;
 using ScreenSound.Modelos;
 
@@ -7,7 +7,7 @@ namespace ScreenSound.Api.Endpoints
 {
     public static class ArtistasExtensions 
     {
-        public static void AddEndpointsArtistas(this WebApplication
+        public static void AddEndPointsArtistas(this WebApplication
             app)
         {
             app.MapGet("/Artistas", ([FromServices]DAL<Artista>dal) =>
@@ -35,7 +35,7 @@ namespace ScreenSound.Api.Endpoints
                 return Results.Ok();
             });
 
-            app.MapDelete("/Artista/{id}", ([FromServices] DAL<Artista> dal, int id) =>
+            app.MapDelete("/Artistas/{id}", ([FromServices] DAL<Artista> dal, int id) =>
             {
                 var artista = dal.RecuperarPor(a => a.Id == id);
                 if (artista is null)
